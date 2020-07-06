@@ -2,8 +2,10 @@ version: '3'
 services:
   web:
     build:
-      context: ./interests-front2
+      context: ./interests-front
       dockerfile: Dockerfile.dev
+    image:
+      aleczheng/interests-front
     ports:
       - '4200:4200'
     volumes:
@@ -13,3 +15,5 @@ services:
     build:
       context: ./interests-back
       dockerfile: Dockerfile.dev
+    image:
+      aleczheng/interests-front

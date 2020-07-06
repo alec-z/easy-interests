@@ -7,7 +7,7 @@ script:
   - echo "OK" #测试单个module
   - echo "OK2" #集合测试
 after_success:
-  - echo "$DOCKER_PASSWORD" docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push aleczheng/interests-front
   - docker push aleczheng/interests-back
 

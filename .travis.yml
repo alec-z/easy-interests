@@ -4,6 +4,8 @@ services:
 before_install:
   - docker-compose -f docker-compose-prod.yml up --build -d
 script:
+  - echo "OK" #测试单个module
+  - echo "OK2" #集合测试
 after_success:
   - echo "$DOCKER_PASSWORD" docker login -u "$DOCKER_ID" --password-stdin
   - docker push aleczheng/interests-front

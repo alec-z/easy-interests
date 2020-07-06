@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./interests-front2
+      dockerfile: Dockerfile
+    ports:
+      - '8080:80'
+  backend:
+    build:
+      context: ./interests-back
+      dockerfile: Dockerfile.dev

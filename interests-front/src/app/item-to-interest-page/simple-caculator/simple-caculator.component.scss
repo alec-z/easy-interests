@@ -1,0 +1,21 @@
+mat-card {
+  flex: 0 1 800px;
+  justify-content: space-between;
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.caculator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.question {
+  margin-bottom: 6px;
+}
+.interest {
+  margin-top: 6px;
+}

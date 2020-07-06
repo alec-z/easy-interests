@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-content>
+      <div class="question">
+        等额本息计算每月还款
+      </div>
+      <div class="caculator">
+        <mat-form-field appearance="standard">
+          <mat-label>总借款</mat-label>
+          <input type="number" matInput placeholder="如:500000" [(ngModel)]="amount" (ngModelChange)="inputChanged()">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>还款月数</mat-label>
+          <input type="number" matInput placeholder="如:36" [(ngModel)]="period" (ngModelChange)="inputChanged()">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>年利率</mat-label>
+          <input type="number" matInput placeholder="4.32" [(ngModel)]="annualInterest"
+                 (ngModelChange)="inputChanged()">
+          <span matSuffix>%</span>
+        </mat-form-field>
+      </div>
+      <div *ngIf="payback" class="payback">
+        每月还款 = {{payback}}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

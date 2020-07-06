@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-content>
+    <p class="question">
+      更复杂的套路也不怕：*京新推出的消费贷，月手续费率0.28%，每月值还手续费，但前2年每年需还30%本金，最后一年还剩余40%。即50W借款,第12月，第24月还款50W * 30% + 50W * 0.28% = 151400。
+      第36月还款50W * 40% + 50W * 0.28% = 201400。其他每月还50W * 0.28% = 1400。求实际利率？
+    </p>
+    <div class="demo">
+
+    </div>
+  <div class="caculator" fxLayout="row wrap" fxLayoutAlign.gt-md="space-between" gdGap.lt-lg="6px">
+    <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'income'"></app-pay-set>
+    <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'payback'"></app-pay-set>
+  </div>
+  <div class="interest" *ngIf="interest">
+    <div class="content">
+      真实利率 = {{interest}}
+    </div>
+  </div>
+  </mat-card-content>
+</mat-card>

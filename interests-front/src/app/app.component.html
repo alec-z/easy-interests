@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="expanded-toolbar" fxLayoutAlign="space-between center">
+  <span>
+    <button mat-button routerLink="/">真实利率计算器</button>
+  </span>
+  <span class="mat-small" fxFlex="start end">
+    无论是什么复杂的还款方式，都能算出真实利率，妈妈再也不用但我被银行套路了!
+  </span>
+  <div fxLayout="row" fxHide fxShow.gt-sm>
+    <button mat-button routerLink="/">
+      Home
+    </button>
+    <button mat-button routerLink="/item-to-interest">
+      通过还款算真实利率
+    </button>
+    <button mat-button routerLink="/interest-to-item">
+      通过真实利率算还款
+    </button>
+    <button mat-button routerLink="/game">
+      作者
+    </button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu  #menu="matMenu" fxHide>
+  <button  mat-menu-item routerLink="/">
+    Home
+  </button>
+  <button  mat-menu-item routerLink="/item-to-interest">
+    通过还款算真实利率
+  </button>
+  <button  mat-menu-item routerLink="/interest-to-item">
+    通过真实利率算还款
+  </button>
+  <button  mat-menu-item routerLink="/game">
+    作者
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>

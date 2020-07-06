@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "interests-front2": {
+    "interests-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/interests-front2",
+            "outputPath": "dist/interests-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "interests-front2:build"
+            "browserTarget": "interests-front:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "interests-front2:build:production"
+              "browserTarget": "interests-front:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "interests-front2:build"
+            "browserTarget": "interests-front:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "interests-front2:serve"
+            "devServerTarget": "interests-front:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "interests-front2:serve:production"
+              "devServerTarget": "interests-front:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "interests-front2"
+  "defaultProject": "interests-front"
 }

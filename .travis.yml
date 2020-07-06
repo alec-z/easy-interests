@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker-compose -f docker-compose-prod.yml up --build
+  - docker-compose -f docker-compose-prod.yml up --build -d
 script:
   - exit 0 #单独测试某一组件。
   - exit 0 #集成测试。

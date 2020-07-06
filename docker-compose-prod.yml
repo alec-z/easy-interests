@@ -13,4 +13,4 @@ services:
       context: ./interests-back
       dockerfile: Dockerfile.dev
     image:
-      aleczheng/interest-back
+      aleczheng/interests-back

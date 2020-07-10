@@ -20,8 +20,7 @@ deploy:
   on:
     branch: master
   access_key_id: $BEANSTALK_ID
-  secret_access_key:
-    secure: $BEANSTALK_TOKEN
+  secret_access_key: $BEANSTALK_TOKEN
 
 
 

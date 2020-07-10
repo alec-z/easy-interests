@@ -18,8 +18,7 @@
       "name": "backend",
       "image": "aleczheng/interests-back",
       "hostname": "backend",
-      "essential": false,
-      "links": ["web"]
+      "essential": false
     }
   ]
 }

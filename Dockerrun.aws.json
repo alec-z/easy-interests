@@ -1,0 +1,25 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions":  [
+    {
+      "name": "web",
+      "image": "aleczheng/interests-front",
+      "hostname": "web",
+      "essential":  true,
+      "links": ["backend"],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ]
+    },
+    {
+      "name": "backend",
+      "image": "aleczheng/interests-back",
+      "hostname": "backend",
+      "essential": false,
+      "links": ["web"]
+    }
+  ]
+}

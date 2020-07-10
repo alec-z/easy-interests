@@ -10,5 +10,19 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push aleczheng/interests-front
   - docker push aleczheng/interests-back
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: interests
+  env: "Interests-env"
+  bucket_name: "elasticbeanstalk-us-east-2-994743087499"
+  bucket_path: "interests"
+  on:
+    branch: master
+  access_key_id: $BEANSTALK_ID
+  secret_access_key:
+    secure: $BEANSTALK_TOKEN
+
+
 
 

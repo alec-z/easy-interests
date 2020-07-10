@@ -7,6 +7,7 @@
       "hostname": "web",
       "essential":  true,
       "links": ["backend"],
+      "memory": 128,
       "portMappings": [
         {
           "hostPort": 80,
@@ -18,6 +19,7 @@
       "name": "backend",
       "image": "aleczheng/interests-back",
       "hostname": "backend",
+      "memory": 128,
       "essential": false
     }
   ]

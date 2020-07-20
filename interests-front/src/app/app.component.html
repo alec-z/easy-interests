@@ -1,10 +1,11 @@
 <mat-toolbar color="primary" class="expanded-toolbar" fxLayoutAlign="space-between center">
-  <span>
-    <button mat-button routerLink="/">真实利率计算器</button>
+  <span fxLayout="column" fxLayoutAlign="start start">
+    <button mat-button routerLink="/"><span class="fas fa-money-check-alt" style="font-size: 24px;color:white"></span> 真实利率计算器</button>
+    <span class="mat-small" style="padding-left:20px;">
+     无论是什么复杂的还款方式，都能算出真实利率，妈妈再也不用但我被银行套路了!
+    </span>
   </span>
-  <span class="mat-small" fxFlex="start end">
-    无论是什么复杂的还款方式，都能算出真实利率，妈妈再也不用但我被银行套路了!
-  </span>
+
   <div fxLayout="row" fxHide fxShow.gt-sm>
     <button mat-button routerLink="/item-to-interest">
       通过还款算真实利率
@@ -33,7 +34,7 @@
 </mat-menu>
 <router-outlet></router-outlet>
 <mat-toolbar color="primary" class="expanded-toolbar" fxLayoutAlign="space-between center" style="margin-top: 6vh;">
-  <div style="font-size:12px;text-align: center; line-height: 20px;" fxFlex="0 1 100%">
+  <div style="font-size:12px;text-align: center; line-height: 20px;width:100%;">
     * 真实利率的算法为月利率 X 12, 比EAR有略低，但我观察大部分中国的银行是这样算的。<br />
     * 借款列表变成你投资的款项，还款列表变成的你收到的回报，可以用来计算固定收益类投资回报率。
   </div>

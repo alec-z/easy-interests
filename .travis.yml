@@ -12,13 +12,12 @@ after_success:
   - docker push aleczheng/interests-back
 deploy:
   provider: elasticbeanstalk
-  region: "ap-southeast-1"
+  region: "ap-northeast-1"
   app: interests
   env: "Interests-env"
-  bucket_name: "elasticbeanstalk-ap-southeast-1-994743087499"
+  bucket_name: "elasticbeanstalk-ap-northeast-1-994743087499"
   bucket_path: "interests"
   on:
     branch: master
   access_key_id: $BEANSTALK_ID
   secret_access_key: $BEANSTALK_TOKEN
-

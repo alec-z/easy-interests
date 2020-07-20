@@ -20,6 +20,7 @@ import { PaySetComponent } from './item-to-interest-page/complex-caculator/pay-s
 import { PayItemComponent } from './item-to-interest-page/complex-caculator/pay-set/pay-item/pay-item.component';
 import { ItemGeneratorComponent } from './item-to-interest-page/complex-caculator/pay-set/item-generator/item-generator.component';
 import {PayItemService} from './service/pay-item.service';
+import { AuthorComponent } from './author/author.component';
 
 export const MY_MAT_MOMENT_DATE_FORMATS = {
   parse: {
@@ -42,7 +43,8 @@ export const MY_MAT_MOMENT_DATE_FORMATS = {
     ComplexCaculatorComponent,
     PaySetComponent,
     PayItemComponent,
-    ItemGeneratorComponent
+    ItemGeneratorComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,

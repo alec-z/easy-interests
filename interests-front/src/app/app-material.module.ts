@@ -11,6 +11,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -27,7 +29,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatSelectModule,
     MatOptionModule,
     MatDatepickerModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatGridListModule
   ],
   exports: [
     MatToolbarModule,
@@ -41,7 +45,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatSelectModule,
     MatOptionModule,
     MatDatepickerModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatGridListModule
   ]
 })
 export class AppMaterialModule {

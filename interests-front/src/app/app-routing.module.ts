@@ -7,7 +7,7 @@ import {InterestToItemPageComponent} from './interest-to-item-page/interest-to-i
 const routes: Routes = [
   { path: 'item-to-interest', component: ItemToInterestPageComponent },
   { path: 'interest-to-item', component: InterestToItemPageComponent },
-  { path: '',   redirectTo: '/interest-to-item', pathMatch: 'full' }
+  { path: '',   redirectTo: '/item-to-interest', pathMatch: 'full' }
 ];
 
 @NgModule({

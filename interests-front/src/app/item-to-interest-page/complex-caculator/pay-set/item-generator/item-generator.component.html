@@ -1,34 +1,53 @@
-<div>
-  <mat-form-field appearance="standard">
-    <mat-label>开始日期</mat-label>
-    <input matInput placeholder="开始日期" [(ngModel)]="startDate">
-  </mat-form-field>
-  <mat-form-field appearance="standard">
-    <mat-label>增长单位</mat-label>
-    <mat-select [(ngModel)]="step">
-      <mat-option value="month" selected>
-        月
-      </mat-option>
-      <mat-option value="day">
-        年
-      </mat-option>
-      <mat-option value="year">
-        天
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="standard">
-    <mat-label>增长次数</mat-label>
-    <input type="number" matInput placeholder="如:36" [(ngModel)]="number">
-  </mat-form-field>
-  <mat-form-field appearance="standard">
-    <mat-label>金额</mat-label>
-    <input type="number" matInput placeholder="如:15238.88" [(ngModel)]="amount">
-  </mat-form-field>
-</div>
+<h2 mat-dialog-title>产生
+  <span *ngIf="payType === 'income'">
+      借款
+      <mat-icon fontSet="fas" fontIcon="fa-arrow-right" color="primary"></mat-icon>
+      <mat-icon fontSet="far" fontIcon="fa-smile-beam" color="primary"></mat-icon>
+    </span>
+  <span *ngIf="payType === 'payback'">
+      还款
+      <mat-icon fontSet="far" fontIcon="fa-sad-cry" color="warn"></mat-icon>
+      <mat-icon fontSet="fas" fontIcon="fa-arrow-right" color="warn"></mat-icon>
+    </span>
+  流水</h2>
+<mat-dialog-content>
+  <div fxLayoutGap="1vw">
+    <mat-form-field appearance="standard">
+      <mat-label>开始日期</mat-label>
+      <input matInput placeholder="开始日期" [matDatepicker]="myDatepicker" [(ngModel)]="startDate" (click)="myDatepicker.open()" (ngModelChange)="calPayItems()">
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>增长单位</mat-label>
+      <mat-select [(ngModel)]="step" (ngModelChange)="calPayItems()">
+        <mat-option value="month" selected>
+          月
+        </mat-option>
+        <mat-option value="day">
+          年
+        </mat-option>
+        <mat-option value="year">
+          天
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>增长次数</mat-label>
+      <input type="number" matInput placeholder="如:36" [(ngModel)]="number" (ngModelChange)="calPayItems()">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>金额</mat-label>
+      <input type="number" matInput placeholder="如:15238.88" [(ngModel)]="amount" (ngModelChange)="calPayItems()">
+    </mat-form-field>
+  </div>
 
-<div>
-  <mat-list dense>
-    <mat-list-item *ngFor="let item of tmpPayItems"> {{item.date}}  {{item.amount}}</mat-list-item>
-  </mat-list>
-</div>
+  <div fxLayout="column wrap" style="align-content:space-between" [ngStyle]="{'max-height' : tmpPayItems.length>60 ? '576px': '288px'}" *ngIf="tmpPayItems.length > 0">
+    <div *ngFor="let item of tmpPayItems;  index as i" style="min-height:24px; line-height: 24px;max-width: 20%;">
+      <span style="display: inline-block; width: 18px;text-align: right;margin-right:6px;">{{i+1}}</span>{{item.date.format('YYYY-MM-DD')}} &nbsp; {{item.amount}}
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close>取消</button>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="doGenerate()">添加</button>
+</mat-dialog-actions>

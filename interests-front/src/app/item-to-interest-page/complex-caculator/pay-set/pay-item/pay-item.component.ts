@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PayItemModel} from '../../../../model/pay-item.model';
 import {PayItemService} from '../../../../service/pay-item.service';
+import {MatDialog} from '@angular/material/dialog';
+import {ItemGeneratorComponent} from '../item-generator/item-generator.component';
 
 @Component({
   selector: 'app-pay-item',
@@ -12,7 +14,7 @@ export class PayItemComponent implements OnInit {
   @Input() payItem: PayItemModel;
   @Input() itemType: string;
   @Input() index: number;
-  constructor(private payItemService: PayItemService) { }
+  constructor(private payItemService: PayItemService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -33,6 +35,16 @@ export class PayItemComponent implements OnInit {
 
   itemChanged() {
     this.payItemService.itemsChange.next(this.itemType);
+  }
+
+  onGenerate() {
+    const generatorDialogRef = this.dialog.open(ItemGeneratorComponent, {
+      data: { startDate: this.payItem.date, amount: this.payItem.amount, payType: this.itemType}
+    });
+    generatorDialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+
   }
 
 }

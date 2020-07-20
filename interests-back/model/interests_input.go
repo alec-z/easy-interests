@@ -47,7 +47,7 @@ func (i *InterestsInput) GetInterests() (sol util.Result){
 		}
 		return res
 	}
-	sol = util.NewtonIterate(fn, fn1, 1, 100, 1,100, 1e-10)
+	sol = util.NewtonIterate(fn, fn1, 1, 500, 1,100, 1e-10)
 	return
 }
 

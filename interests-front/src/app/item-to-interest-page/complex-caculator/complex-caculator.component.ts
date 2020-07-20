@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {PayItemService} from '../../service/pay-item.service';
 import {PayItemModel} from '../../model/pay-item.model';
+import {PayItemService} from '../../service/pay-item.service';
 
 @Component({
   selector: 'app-complex-caculator',
   templateUrl: './complex-caculator.component.html',
-  styleUrls: ['./complex-caculator.component.scss'],
-  providers: [PayItemService]
+  styleUrls: ['./complex-caculator.component.scss']
 })
 export class ComplexCaculatorComponent implements OnInit {
   interest: string;
@@ -17,9 +16,11 @@ export class ComplexCaculatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.payItemService.calInterestFormEqualItem(30000, 10020, 3);
+    this.payItemService.calInterestFormEqualItem(500000, 201400, 3);
     const paybacks = this.payItemService.paybacks;
-    paybacks[1].amount = 31000;
+    paybacks[0].amount = 1400;
+    paybacks[1].amount = 201400;
+    paybacks[2].amount = 301400;
     this.payItemService.paybacks = paybacks;
     this.payItemService.interestReady.subscribe(r => {
       this.interest = r;

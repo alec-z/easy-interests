@@ -19,6 +19,7 @@ import { ComplexCaculatorComponent } from './item-to-interest-page/complex-cacul
 import { PaySetComponent } from './item-to-interest-page/complex-caculator/pay-set/pay-set.component';
 import { PayItemComponent } from './item-to-interest-page/complex-caculator/pay-set/pay-item/pay-item.component';
 import { ItemGeneratorComponent } from './item-to-interest-page/complex-caculator/pay-set/item-generator/item-generator.component';
+import {PayItemService} from './service/pay-item.service';
 
 export const MY_MAT_MOMENT_DATE_FORMATS = {
   parse: {
@@ -58,7 +59,8 @@ export const MY_MAT_MOMENT_DATE_FORMATS = {
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     {provide: MAT_DATE_FORMATS, useValue: MY_MAT_MOMENT_DATE_FORMATS},
-    {provide: LOCALE_ID, useValue: 'zh-cn' }
+    {provide: LOCALE_ID, useValue: 'zh-cn' },
+    PayItemService
   ],
   bootstrap: [AppComponent]
 })

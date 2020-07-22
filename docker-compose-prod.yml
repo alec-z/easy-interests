@@ -8,6 +8,8 @@ services:
       aleczheng/interests-front
     ports:
       - '8080:80'
+    environment:
+      - BACK_END=backend
   backend:
     build:
       context: ./interests-back

@@ -13,6 +13,12 @@
           "hostPort": 80,
           "containerPort": 80
         }
+      ],
+      "environment": [
+        {
+          "name": "BACK_END",
+          "value": "backend"
+        }
       ]
     },
     {

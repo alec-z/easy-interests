@@ -16,7 +16,7 @@
       ],
       "environment": [
         {
-          "name": "BACK_END",
+          "name": "NGINX_BACK_END",
           "value": "backend"
         }
       ]

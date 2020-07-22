@@ -6,4 +6,4 @@ COPY . .
 RUN npm run-script ng build -- --prod && npm run-script gzipper c ./dist
 FROM nginx:alpine as runner
 COPY --from=builder /app/dist/interests-front /usr/share/nginx/html
-COPY ./nginx-backend.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx-backend.conf /etc/nginx/templates/default.conf.template

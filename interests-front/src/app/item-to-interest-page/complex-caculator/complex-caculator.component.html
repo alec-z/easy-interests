@@ -2,7 +2,7 @@
   <mat-card>
     <mat-card-content>
       <p class="question">
-        那对于更一般的情况，即每个月还款的金额是任意的，不相等的，能转化"真实"年利率吗？在下面的计算器中录入实际的借款和还款流水即可。
+        那对于更一般的情况，即每个月还款的金额是任意的，不同的，是否能转化"真实"年利率？在下面录入实际的借款和还款流水即可(可参考视频demo)。
         <a mat-button color="primary" (click)="moreInfo = !moreInfo">查看现实中上述的案例
           <mat-icon *ngIf="!moreInfo">expand_more</mat-icon>
           <mat-icon *ngIf="moreInfo">expand_less</mat-icon>
@@ -15,8 +15,8 @@
         </app-open-close>
 
       </p>
-      <div class="demo" style="text-align: center; max-width: 640px;margin: 2vh auto;">
-        <video controls autoplay loop style="width: 100%; height: 100%; object-fit: fill">
+      <div class="demo" style="text-align: center; max-width: 640px;margin: 2vh auto;" >
+        <video controls autoplay loop style="width: 100%; height: 100%; object-fit: fill; border: 2px solid #cccccc">
           <source src="/assets/demo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>

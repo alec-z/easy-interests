@@ -4,3 +4,32 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$primary-color: #3f51b5;
+
+.caculator {
+  .mat-form-field-infix {
+    width: auto;
+  }
+}
+.pay-item {
+  .mat-form-field-infix {
+    width: auto;
+  }
+}
+
+.caculator-wrapper {
+  border-radius: 4px;
+  margin: 4vw 2vh;
+  border: 1px solid rgba(0,0,0,.2);
+  padding: 1vh 1vw;
+  &.small-wrapper {
+    margin: 1vw 0.5vh;
+    padding: 0.5vh 0.5vw;
+  }
+  .title {
+    padding: 8px 8px 8px 0px;
+    color: rgba(0,0,0,.54);
+  }
+
+}

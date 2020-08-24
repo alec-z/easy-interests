@@ -14,22 +14,12 @@ import {PayItemService} from '../../service/pay-item.service';
   providers: [PayItemService]
 })
 export class SimpleCaculatorComponent implements OnInit {
+  moreInfo = false;
   interest: string;
-  // tslint:disable-next-line:variable-name
-  private _amount = 500000;
   // tslint:disable-next-line:variable-name
   private _period = 36;
   // tslint:disable-next-line:variable-name
-  private _payback = 15238.88;
-
-  get amount() {
-    return this._amount;
-  }
-
-  set amount(value) {
-    this._amount = value;
-    this.calInterest();
-  }
+  private _feeRate = 0.27;
 
   get period() {
     return this._period;
@@ -40,17 +30,19 @@ export class SimpleCaculatorComponent implements OnInit {
     this.calInterest();
   }
 
-  get payback() {
-    return this._payback;
+  get feeRate() {
+    return this._feeRate;
   }
 
-  set payback(value) {
-    this._payback = value;
+  set feeRate(value) {
+    this._feeRate = value;
     this.calInterest();
   }
 
   calInterest(): void {
-    this.payItemService.calInterestFormEqualItem(this.amount, this.payback, this.period);
+    const amount = 100000.0;
+    const payback = amount * this._feeRate / 100 + amount / this._period;
+    this.payItemService.calInterestFormEqualItem(amount, payback, this._period);
   }
 
 

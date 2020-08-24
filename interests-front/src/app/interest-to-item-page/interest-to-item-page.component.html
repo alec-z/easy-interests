@@ -1,21 +1,24 @@
-<div class="wrapper" style="margin-top: 4vh">
+<div class="caculator-wrapper" ngClass.lt-md="small-wrapper">
+<div class="title">通过真实利率计算还款</div>
+<div style="padding: 1px;">
   <mat-card>
     <mat-card-content>
       <div class="question">
         等额本息计算每月还款
       </div>
-      <div class="caculator">
-        <mat-form-field appearance="standard">
+      <div class="caculator" fxLayoutGap.gt-xs="2vw" fxLayoutGap="2px" fxLayout="row"
+           fxLayoutAlign="space-between center">
+        <mat-form-field fxFlex="0 1">
           <mat-label>总借款</mat-label>
           <input type="number" matInput placeholder="如:500000" [(ngModel)]="amount" (ngModelChange)="inputChanged()">
         </mat-form-field>
 
-        <mat-form-field appearance="standard">
+        <mat-form-field fxFlex="0 1">
           <mat-label>还款月数</mat-label>
           <input type="number" matInput placeholder="如:36" [(ngModel)]="period" (ngModelChange)="inputChanged()">
         </mat-form-field>
 
-        <mat-form-field appearance="standard">
+        <mat-form-field fxFlex="0 1">
           <mat-label>年利率</mat-label>
           <input type="number" matInput placeholder="4.32" [(ngModel)]="annualInterest"
                  (ngModelChange)="inputChanged()">
@@ -27,4 +30,5 @@
       </div>
     </mat-card-content>
   </mat-card>
+</div>
 </div>

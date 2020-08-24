@@ -13,6 +13,7 @@ import {MatOptionModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -31,7 +32,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDatepickerModule,
     MatListModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   exports: [
     MatToolbarModule,
@@ -47,7 +50,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDatepickerModule,
     MatListModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    MatTabsModule
   ]
 })
 export class AppMaterialModule {

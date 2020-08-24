@@ -11,13 +11,13 @@
     </span>
   流水</h2>
 <mat-dialog-content>
-  <div fxLayoutGap="1vw">
-    <mat-form-field appearance="standard">
+  <div fxLayoutGap="1%" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <mat-form-field fxFlex="49%" fxFlex.gt-md="24%">
       <mat-label>开始日期</mat-label>
       <input matInput placeholder="开始日期" [matDatepicker]="myDatepicker" [(ngModel)]="startDate" (click)="myDatepicker.open()" (ngModelChange)="calPayItems()">
       <mat-datepicker #myDatepicker></mat-datepicker>
     </mat-form-field>
-    <mat-form-field appearance="standard">
+    <mat-form-field fxFlex="49%" fxFlex.gt-md="24%">
       <mat-label>增长单位</mat-label>
       <mat-select [(ngModel)]="step" (ngModelChange)="calPayItems()">
         <mat-option value="month" selected>
@@ -31,18 +31,18 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="standard">
+    <mat-form-field fxFlex="49%" fxFlex.gt-md="24%">
       <mat-label>增长次数</mat-label>
       <input type="number" matInput placeholder="如:36" [(ngModel)]="number" (ngModelChange)="calPayItems()">
     </mat-form-field>
-    <mat-form-field appearance="standard">
+    <mat-form-field fxFlex="49%" fxFlex.gt-md="auto">
       <mat-label>金额</mat-label>
       <input type="number" matInput placeholder="如:15238.88" [(ngModel)]="amount" (ngModelChange)="calPayItems()">
     </mat-form-field>
   </div>
 
-  <div fxLayout="column wrap" style="align-content:space-between" [ngStyle]="{'max-height' : tmpPayItems.length>60 ? '576px': '288px'}" *ngIf="tmpPayItems.length > 0">
-    <div *ngFor="let item of tmpPayItems;  index as i" style="min-height:24px; line-height: 24px;max-width: 20%;">
+  <div fxLayout="column wrap" style="align-content:space-between;" *ngIf="tmpPayItems.length > 0" ngStyle.gt-sm="max-height: 576px" ngStyle.gt-xs="max-height: 288px">
+    <div *ngFor="let item of tmpPayItems;  index as i" style="min-height:24px; line-height: 24px;width: 160px; border-right: 1px solid #DFDFDF">
       <span style="display: inline-block; width: 18px;text-align: right;margin-right:6px;">{{i+1}}</span>{{item.date.format('YYYY-MM-DD')}} &nbsp; {{item.amount}}
     </div>
   </div>

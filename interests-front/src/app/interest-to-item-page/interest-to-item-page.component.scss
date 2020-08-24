@@ -1,25 +1,7 @@
-.wrapper {
-  margin-top: 2vh;
-  display: flex;
-  justify-content: center;
-}
 mat-card {
-  flex: 0 1 800px;
-  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px;
 }
-
-
-mat-card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.caculator {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 .question {
   margin-bottom: 6px;
 }

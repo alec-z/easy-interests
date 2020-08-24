@@ -1,23 +1,35 @@
-<mat-card>
-  <mat-card-content>
-    <p class="question">
-      更复杂的套路也不怕：北*银行新推出的消费贷，月手续费率0.28%，每月只还手续费，但前2年每满一年需还30%本金，最后一期还剩余40%本金。即50W借款，第12月、第24月还款50W X 30% + 50W X 0.28% = 151400。
-      第36月还款50W X 40% + 50W X 0.28% = 201400。其他每月还50W X 0.28% = 1400。求实际利率？
-    </p>
-    <div class="demo" style="text-align: center; height:450px; line-height: 450px;">
-      <video width="640" height="436" controls autoplay loop >
-        <source src="/assets/demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  <div class="caculator" fxLayout="row wrap" fxLayoutAlign.gt-md="space-between" gdGap.lt-lg="6px">
-    <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'income'"></app-pay-set>
-    <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'payback'"></app-pay-set>
-  </div>
-  <div class="interest" *ngIf="interest">
-    <div class="content">
-      真实利率 = {{interest}}
-    </div>
-  </div>
-  </mat-card-content>
-</mat-card>
+<div style="padding: 1px">
+  <mat-card>
+    <mat-card-content>
+      <p class="question">
+        那对于更一般的情况，即每个月还款的金额是任意的，不相等的，能转化"真实"年利率吗？在下面的计算器中录入实际的借款和还款流水即可。
+        <a mat-button color="primary" (click)="moreInfo = !moreInfo">查看现实中上述的案例
+          <mat-icon *ngIf="!moreInfo">expand_more</mat-icon>
+          <mat-icon *ngIf="moreInfo">expand_less</mat-icon>
+        </a>
+        <app-open-close [isOpen]="moreInfo">
+          1. 北*银行的消费贷产品，月手续费率0.28%，每月只还手续费，但前2年每年需还30%本金，最后一期还剩余40%本金。<br/>即50W借款，第12月、第24月还款50W X 30% + 50W X 0.28% =
+          151400。
+          第36月还款50W X 40% + 50W X 0.28% = 201400。其他每月还50W X 0.28% = 1400。<br/><br/>
+          2. 广*银行的抵押经营贷，月手续费率xx, 前3年只还手续费，后7年还手续费+等额本金。<br/>
+        </app-open-close>
+
+      </p>
+      <div class="demo" style="text-align: center; max-width: 640px;margin: 2vh auto;">
+        <video controls autoplay loop style="width: 100%; height: 100%; object-fit: fill">
+          <source src="/assets/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="caculator" fxLayout="row" fxLayoutAlign.gt-md="space-between" gdGap.lt-lg="6px">
+        <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'income'"></app-pay-set>
+        <app-pay-set fxFlex.gt-md="49.5" fxFlex="100" [itemType]="'payback'"></app-pay-set>
+      </div>
+      <div class="interest" *ngIf="interest">
+        <div class="content">
+          真实利率 = {{interest}}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

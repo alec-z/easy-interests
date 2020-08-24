@@ -1,21 +1,18 @@
-<div fxLayout="row" fxLayoutAlign="space-around center">
+<div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap.gt-xs="12px" fxLayoutGap="2px" class="pay-item">
   <div fxFlex="0 1 4%" style="text-align: center">
-  {{ index + 1 }}
+    {{ index + 1 }}
   </div>
-  <div fxFlex="0 1 38%" fxLayout="row" fxLayoutAlign="center">
-    <mat-form-field appearance="standard">
-      <mat-label>日期</mat-label>
-      <input matInput placeholder="如:500000" [matDatepicker]="myDatepicker" [(ngModel)]="payItem.date" (click)="myDatepicker.open()" (ngModelChange)="itemChanged()">
-      <mat-datepicker #myDatepicker></mat-datepicker>
-    </mat-form-field>
-  </div>
-  <div fxFlex="0 1 38%" fxLayout="row" fxLayoutAlign="center">
-    <mat-form-field appearance="standard">
-      <mat-label>金额</mat-label>
-      <input type="number" matInput placeholder="如:500000" [(ngModel)]="payItem.amount" (ngModelChange)="itemChanged()">
-    </mat-form-field>
-  </div>
-  <div fxFlex="0 1 14%" fxLayout="row" fxLayoutAlign="center">
+  <mat-form-field fxFlex.gt-xs="0 1 36%" fxFlex="0 1 30%">
+    <mat-label>日期</mat-label>
+    <input matInput placeholder="如:500000" [matDatepicker]="myDatepicker" [(ngModel)]="payItem.date"
+           (click)="myDatepicker.open()" (ngModelChange)="itemChanged()">
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field fxFlex.gt-xs="0 1 36%" fxFlex="0 1 30%">
+    <mat-label>金额</mat-label>
+    <input type="number" matInput placeholder="如:500000" [(ngModel)]="payItem.amount" (ngModelChange)="itemChanged()">
+  </mat-form-field>
+  <div fxFlex.gt-xs="0 1 16%" fxFlex="0 1 auto" style="text-align: center">
     <a mat-icon-button color="warn" (click)="onRemove()">
       <mat-icon>delete_forever</mat-icon>
     </a>
@@ -24,5 +21,3 @@
     </a>
   </div>
 </div>
-
-

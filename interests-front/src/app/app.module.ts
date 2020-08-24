@@ -21,6 +21,7 @@ import { PayItemComponent } from './item-to-interest-page/complex-caculator/pay-
 import { ItemGeneratorComponent } from './item-to-interest-page/complex-caculator/pay-set/item-generator/item-generator.component';
 import {PayItemService} from './service/pay-item.service';
 import { AuthorComponent } from './author/author.component';
+import { OpenCloseComponent } from './_shared/open-close/open-close.component';
 
 export const MY_MAT_MOMENT_DATE_FORMATS = {
   parse: {
@@ -44,7 +45,8 @@ export const MY_MAT_MOMENT_DATE_FORMATS = {
     PaySetComponent,
     PayItemComponent,
     ItemGeneratorComponent,
-    AuthorComponent
+    AuthorComponent,
+    OpenCloseComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class ComplexCaculatorComponent implements OnInit {
   interest: string;
   incomes: PayItemModel[];
   paybacks: PayItemModel[];
+  moreInfo = false;
 
   constructor(private payItemService: PayItemService) {
   }

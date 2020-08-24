@@ -1,6 +1,5 @@
 <div class="payItemLst" fxLayout="column">
   <div class="paySetHeader">
-
     <span *ngIf="itemType === 'income'">
       借款列表&nbsp;&nbsp;
       <mat-icon fontSet="fas" fontIcon="fa-arrow-right" color="primary"></mat-icon>
@@ -10,7 +9,6 @@
       还款列表&nbsp;&nbsp;
       <mat-icon fontSet="far" fontIcon="fa-sad-cry" color="warn"></mat-icon>
       <mat-icon fontSet="fas" fontIcon="fa-arrow-right" color="warn"></mat-icon>
-
     </span>
   </div>
   <app-pay-item *ngFor="let item of payItems; index as i" [payItem]="item" [index]="i" [itemType]="itemType"></app-pay-item>

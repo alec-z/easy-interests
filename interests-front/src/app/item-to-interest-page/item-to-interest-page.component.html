@@ -1,3 +1,15 @@
-<app-simple-caculator style="margin-top: 4vh"></app-simple-caculator>
-<mat-divider style="margin-top: 6vh;margin-bottom: 6vh;"></mat-divider>
-<app-complex-caculator></app-complex-caculator>
+<div class="caculator-wrapper" ngClass.lt-md="small-wrapper">
+  <div class="title">通过还款计算真实利率</div>
+  <mat-tab-group dynamicHeight #tabGroup>
+    <mat-tab label="简单情况">
+      <app-simple-caculator style="margin-top: 3vh;"></app-simple-caculator>
+      <div style="text-align: center">
+       <a mat-button color="primary" (click)="tabToComplex(tabGroup)">我想计算 "更一般/更复杂" 的情况
+          <mat-icon>keyboard_arrow_right</mat-icon> </a>
+      </div>
+    </mat-tab>
+    <mat-tab label="复杂情况">
+      <app-complex-caculator style="margin-top: 3vh"></app-complex-caculator>
+    </mat-tab>
+  </mat-tab-group>
+</div>

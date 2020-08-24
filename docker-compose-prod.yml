@@ -9,7 +9,7 @@ services:
     ports:
       - '8080:80'
     environment:
-      - NGINX_BACK_END=backend
+      - NGINX_BACK_END=backend-cluster-ip
   backend:
     build:
       context: ./interests-back

@@ -1,6 +1,6 @@
 package model
 
 type PayItem struct {
-	date string
-	amount float64
+	Date string
+	Amount float64
 }

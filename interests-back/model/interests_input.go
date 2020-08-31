@@ -10,20 +10,20 @@ import (
 )
 
 type InterestsInput struct {
-	incomes []PayItem
-	paybacks []PayItem
+	Incomes []PayItem
+	Paybacks []PayItem
 }
 
 func (i *InterestsInput) BindFromMap(m echo.Map) {
 	for _, v := range m["incomes"].([]interface{}) {
 		vv := v.(map[string]interface{})
 		amount, _ := strconv.ParseFloat(vv["amount"].(string), 64)
-		i.incomes = append(i.incomes, PayItem{date: vv["date"].(string), amount: amount})
+		i.Incomes = append(i.Incomes, PayItem{Date: vv["date"].(string), Amount: amount})
 	}
 	for _, v := range m["paybacks"].([]interface{}) {
 		vv := v.(map[string]interface{})
 		amount, _ := strconv.ParseFloat(vv["amount"].(string), 64)
-		i.paybacks = append(i.paybacks, PayItem{date: vv["date"].(string), amount: amount})
+		i.Paybacks = append(i.Paybacks, PayItem{Date: vv["date"].(string), Amount: amount})
 	}
 }
 
@@ -52,16 +52,16 @@ func (i *InterestsInput) GetInterests() (sol util.Result){
 }
 
 func (i * InterestsInput) getEquation() map[int]float64 {
-		targetDate, _ := time.Parse("2006-01-02", i.incomes[0].date)
+		targetDate, _ := time.Parse("2006-01-02", i.Incomes[0].Date)
 	res := make(map[int]float64)
-	for _, v := range i.incomes {
-		t, _ := time.Parse("2006-01-02", v.date)
+	for _, v := range i.Incomes {
+		t, _ := time.Parse("2006-01-02", v.Date)
 
-		res[-int(math.Ceil(t.Sub(targetDate).Hours() / 24.0))] += -v.amount
+		res[-int(math.Ceil(t.Sub(targetDate).Hours() / 24.0))] += -v.Amount
 	}
-	for _, v := range i.paybacks {
-		t, _ := time.Parse("2006-01-02", v.date)
-		res[-int(math.Ceil(t.Sub(targetDate).Hours() / 24.0))] += v.amount
+	for _, v := range i.Paybacks {
+		t, _ := time.Parse("2006-01-02", v.Date)
+		res[-int(math.Ceil(t.Sub(targetDate).Hours() / 24.0))] += v.Amount
 	}
 	return res
 }

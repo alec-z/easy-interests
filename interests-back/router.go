@@ -16,6 +16,7 @@ func RouterInit() {
 
 	// Routes
 	e.POST("/api/cal", api.Calculate)
+	e.GET("/api/ws_cal", api.WsCalculate)
 
 	e.POST("/api/cal_item", api.CalculateItem)
 

@@ -3,4 +3,4 @@ WORKDIR /app
 COPY ./go.mod .
 RUN go mod download
 COPY . .
-CMD ["go", "run", "main.go", "router.go"]
+CMD ["go", "run", "main.go"]

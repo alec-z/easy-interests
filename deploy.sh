@@ -1,6 +1,6 @@
 SHA=$(git rev-parse HEAD)
-docker build -t aleczheng/interests-front -t aleczheng/interests-front:$SHA -f ./interests-front/Dockerfile ./interests-front
-docker build -t aleczheng/interests-back -t aleczheng/interests-back:$SHA -f ./interests-back/Dockerfile ./interests-back
+docker build -t aleczheng/interests-front -t aleczheng/interests-front:$SHA -f ./interests-front/Dockerfile ./interests-front || return 1
+docker build -t aleczheng/interests-back -t aleczheng/interests-back:$SHA -f ./interests-back/Dockerfile ./interests-back || return 1
 
 docker push aleczheng/interests-front:latest
 docker push aleczheng/interests-front:$SHA

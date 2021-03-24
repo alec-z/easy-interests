@@ -1,3 +1,4 @@
+SHA=$(git rev-parse HEAD)
 docker build -t aleczheng/interests-front:lastest -t aleczheng/interests-front:$SHA -f ./interests-front/Dockerfile ./interests-front
 docker push aleczheng/interests-front:lastest
 docker push aleczheng/interests-front:$SHA

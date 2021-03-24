@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: interests-back-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: interests-back
+  template:
+      metadata:
+        labels:
+          component: interests-back
+      spec:
+        containers:
+          - name: interests-back
+            image: aleczheng/interests-back
+            ports:
+              - containerPort: 3000

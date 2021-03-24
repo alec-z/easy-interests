@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: interests-front-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: interests-front
+  template:
+      metadata:
+        labels:
+          component: interests-front
+      spec:
+        containers:
+          - name: interests-front
+            image: aleczheng/interests-front
+            ports:
+              - containerPort: 80
+

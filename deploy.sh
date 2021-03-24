@@ -7,3 +7,6 @@ docker push aleczheng/interests-back:lastest
 docker push aleczheng/interests-front:$SHA
 
 kubectl apply -f google_k8s
+
+kubectl set image deployments/interests-front interests-front=aleczheng/license-front:$SHA
+kubectl set image deployments/interests-back interests-back=aleczheng/license-back:$SHA

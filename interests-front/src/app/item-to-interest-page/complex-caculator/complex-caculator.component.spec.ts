@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ComplexCaculatorComponent } from './complex-caculator.component';
 
@@ -6,7 +6,7 @@ describe('ComplexCaculatorComponent', () => {
   let component: ComplexCaculatorComponent;
   let fixture: ComponentFixture<ComplexCaculatorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ComplexCaculatorComponent ]
     })

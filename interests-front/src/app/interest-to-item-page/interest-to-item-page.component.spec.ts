@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { InterestToItemPageComponent } from './interest-to-item-page.component';
 
@@ -6,7 +6,7 @@ describe('InterestToItemPageComponent', () => {
   let component: InterestToItemPageComponent;
   let fixture: ComponentFixture<InterestToItemPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ InterestToItemPageComponent ]
     })

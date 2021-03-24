@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OpenCloseComponent } from './open-close.component';
 
@@ -6,7 +6,7 @@ describe('OpenCloseComponent', () => {
   let component: OpenCloseComponent;
   let fixture: ComponentFixture<OpenCloseComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OpenCloseComponent ]
     })

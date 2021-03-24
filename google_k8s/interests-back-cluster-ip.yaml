@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-cluster-ip
+  name: interests-back-cluster-ip
 spec:
   type: ClusterIP
   selector:
-    component: backend
+    component: interests-back
   ports:
     - port: 3000
       targetPort: 3000

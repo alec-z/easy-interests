@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-deployment
+  name: interests-front-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      component: web
+      component: interests-front
   template:
       metadata:
         labels:
-          component: web
+          component: interests-front
       spec:
         containers:
-          - name: web
+          - name: interests-front
             image: aleczheng/interests-front
             ports:
               - containerPort: 80
-            env:
-              - name: NGINX_BACK_END
-                value: backend-cluster-ip
 

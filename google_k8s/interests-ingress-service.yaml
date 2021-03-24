@@ -1,14 +1,15 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: interests-ingress-service
+  name: ingress-service
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/proxy-read-timeout: 3600
-    nginx.ingress.kubernetes.io/proxy-send-timeout: 3600
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
 spec:
   rules:
-    - http:
+    - host: myserviceb.foo.org
+      http:
         paths:
           - backend:
               serviceName: interests-front-cluster-ip
@@ -18,3 +19,18 @@ spec:
               serviceName: interests-back-cluster-ip
               servicePort: 3000
             path: /api
+    - host: myserviceb.foo.org
+      http:
+        paths:
+          - backend:
+              serviceName: front-cluster-ip
+              servicePort: 80
+            path: /
+          - backend:
+              serviceName: back-cluster-ip
+              servicePort: 8080
+            path: /graphql
+          - backend:
+              serviceName: back-cluster-ip
+              servicePort: 8080
+            path: /api_test

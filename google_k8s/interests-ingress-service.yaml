@@ -6,7 +6,18 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+        - youdaodai.com
+        - www.yourdomain.com
+        - license.youdaodai.com
+      secretName: youdaodai-com
+    - hosts:
+        - compliance.openeuler.org
+      secretName: compliance-openeuler-org
   rules:
     - host: www.youdaodai.com
       http:
@@ -19,7 +30,33 @@ spec:
               serviceName: interests-back-cluster-ip
               servicePort: 3000
             path: /api
+    - host: youdaodai.com
+      http:
+        paths:
+          - backend:
+              serviceName: interests-front-cluster-ip
+              servicePort: 80
+            path: /
+          - backend:
+              serviceName: interests-back-cluster-ip
+              servicePort: 3000
+            path: /api
     - host: license.youdaodai.com
+      http:
+        paths:
+          - backend:
+              serviceName: front-cluster-ip
+              servicePort: 80
+            path: /
+          - backend:
+              serviceName: back-cluster-ip
+              servicePort: 8080
+            path: /graphql
+          - backend:
+              serviceName: back-cluster-ip
+              servicePort: 8080
+            path: /api_test
+    - host: compliance.openeuler.org
       http:
         paths:
           - backend:

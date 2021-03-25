@@ -145,7 +145,8 @@ export class PayItemService {
   }
 
   connectWebSocket() {
-    const url = 'ws://' + window.location.host + '/api/ws_cal';
+    const wsProtocal = 'https:' === window.location.protocol ? 'wss:' : 'ws:';
+    const url = wsProtocal + '//' + window.location.host + '/api/ws_cal';
     this.ws = new WebSocket(url);
     this.ws.onmessage = (me: MessageEvent) => {
       const sol: any = JSON.parse(me.data);

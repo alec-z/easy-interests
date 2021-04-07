@@ -27,8 +27,8 @@ export class InterestToItemPageComponent implements OnInit {
     if (this.period === null || this.period === undefined) {
       return;
     }
-    this.http
-      .post<string>('/api/cal_item', {amount: this.amount, annualInterest: this.annualInterest, period: this.period}).subscribe(p => this.payback = p);
+    this.http.post<string>('/api/cal_item', {
+      amount: this.amount, annualInterest: this.annualInterest, period: this.period}).subscribe(p => this.payback = p);
   }
 
 }

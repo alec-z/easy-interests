@@ -13,6 +13,7 @@ spec:
     - hosts:
         - youdaodai.com
         - license.youdaodai.com
+        - www.youdaodai.com
       secretName: youdaodai-com
     - hosts:
         - compliance.openeuler.org
